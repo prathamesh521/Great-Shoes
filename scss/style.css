@@ -1,0 +1,225 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+section {
+  padding: 7em 0;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+  max-width: 65em;
+}
+
+.split {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1em;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.split > * {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  min-width: 15em;
+}
+
+.spacing > * + * {
+  margin-top: var(--spacer, 2rem);
+}
+
+.btn {
+  text-decoration: none;
+  padding: .5em 1.25em;
+  background: var(--clr-accent, blue);
+  color: #fff;
+  display: inline-block;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: .25em;
+  font-size: 1.125em;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out opacity 0.5s linear;
+  transition: -webkit-transform 0.5s ease-in-out opacity 0.5s linear;
+  transition: transform 0.5s ease-in-out opacity 0.5s linear;
+  transition: transform 0.5s ease-in-out opacity 0.5s linear, -webkit-transform 0.5s ease-in-out opacity 0.5s linear;
+}
+
+.btn:hover,
+.btn:focus {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  opacity: 0.9;
+}
+
+.primary-title {
+  font-size: clamp(2.5rem, calc(5vw + 1rem), 5rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.hero {
+  color: #fff;
+  text-align: center;
+  padding: 15em 0;
+  background-image: url("../img/shoe-3.png"), radial-gradient(#444, #222);
+  background-blend-mode: multiply;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  /* background-size: 10%; */
+}
+
+@supports (background-blend-mode: multiply) {
+  .hero {
+    background-image: url("../img/shoe-3.png"), radial-gradient(#444, #111);
+    background-blend-mode: multiply;
+  }
+}
+
+.section-title {
+  text-align: center;
+  line-height: 1;
+  font-size: clamp(2.5rem, calc(5vw + 1rem), 3rem);
+  margin-bottom: 5rem;
+}
+
+.featured {
+  background: #eee;
+}
+
+.featured__item {
+  display: block;
+  position: relative;
+  -webkit-transform: scale(0.85);
+          transform: scale(0.85);
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+  text-decoration: none;
+  text-align: center;
+  color: #333;
+  line-height: 1.2;
+}
+
+.featured__item:hover, .featured__item:focus {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.featured__item:hover .featured__details, .featured__item:focus .featured__details {
+  opacity: 1;
+}
+
+.featured__item::after {
+  content: "";
+  position: absolute;
+  padding: 75% 75% 0 0;
+  background: #2193b0;
+  border-radius: 50%;
+  top: 10%;
+  left: 10%;
+  z-index: -1;
+}
+
+.featured__details {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
+}
+
+.featured__details span {
+  display: block;
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.product {
+  padding: 3em;
+  margin-bottom: 3em;
+  border-radius: 1.1em;
+  background: radial-gradient(var(--clr-inner, limegreen), var(--clr-outer, purple));
+  text-align: center;
+}
+
+.product__title {
+  font-size: clamp(3rem, calc(5vw + 1rem), 5.5rem);
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+.product__img {
+  margin: -5em 0 0 0;
+}
+
+@media (min-width: 45em) {
+  .product {
+    text-align: left;
+    margin-bottom: 9em;
+  }
+  .product__title {
+    margin: 0;
+  }
+  .product__img {
+    float: right;
+    width: 65%;
+    shape-outside: url("../img/shoe-1.png");
+    margin: 0 -5em 0 0;
+  }
+  .product.shoe-left .product__img {
+    float: left;
+    shape-outside: url("../img/shoe-2.png");
+    margin: 0 0 0 -5em;
+    shape-margin: 2em;
+  }
+}
+
+.hero {
+  --clr-accent:#faa700;
+}
+
+.shoe-red {
+  --clr-inner: #faa700;
+  --clr-outer: #e48d00;
+  --clr-accent: #a1173c;
+}
+
+.shoe-white {
+  --clr-inner: #fce4b3;
+  --clr-outer: #eac886;
+  --clr-accent: #2f4858;
+}
+
+.shoe-blue {
+  --clr-inner: #6dd5ed;
+  --clr-outer: #2193b0;
+  --clr-accent: #008951;
+}
+/*# sourceMappingURL=style.css.map */
